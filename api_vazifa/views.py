@@ -7,10 +7,7 @@ from .serializers import ObHavoSerializer
 TASHQI_FOYDALANUVCHILAR_URL = 'https://jsonplaceholder.typicode.com/users' 
 
 class UserListAPIView(APIView): 
-    """
-    1.1 Barcha foydalanuvchilarni tashqi API'dan olish va tozalash.
-    2.1 Query params orqali shahar (city) bo'yicha qidirish (filtrlash).
-    """
+    
     def get(self, request): 
         try:
             
@@ -46,10 +43,7 @@ class UserListAPIView(APIView):
 
 
 class UserDetailAPIView(APIView):
-    """
-    1.2 ID bo'yicha bitta muayyan foydalanuvchini olish.
-    Mavjud bo'lmagan ID yozilsa, 404 xatolikni to'g'ri qaytarish.
-    """
+    
     def get(self, request, user_id):
         url = f"{TASHQI_FOYDALANUVCHILAR_URL}/{user_id}"
         try:
@@ -83,10 +77,7 @@ class UserDetailAPIView(APIView):
 
 
 class ObHavoAPIView(APIView): 
-    """
-    2.2 Open-Meteo API'sidan ob-havo ma'lumotlarini olish.
-    2.3 Lat/lon koordinatalarini tekshirish va ma'lumotlarni Serializer orqali o'zbekcha chiqarish.
-    """
+    
     def get(self, request): 
         lat = request.query_params.get('lat') 
         lon = request.query_params.get('lon') 
