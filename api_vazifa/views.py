@@ -16,7 +16,7 @@ class UserListAPIView(APIView):
         except requests.RequestException: 
            
             return Response(
-                {'error': "Tashqi API bilan bog'lanib bo'lmadi"}, 
+                {'error': "tashqi API bilan boglanib bomadi"}, 
                 status=status.HTTP_502_BAD_GATEWAY 
             )
         
@@ -58,7 +58,7 @@ class UserDetailAPIView(APIView):
             sorov.raise_for_status() 
         except requests.RequestException: 
             return Response(
-                {'error': "Tashqi API bilan bog'lanib bo'lmadi"},
+                {'error': "tashqi API bilan boglanib bomadi"},
                 status=status.HTTP_502_BAD_GATEWAY
             )
             
